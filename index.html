@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasa Burger — Peça online</title>
+<style>
+:root{--bg:#fffaf3;--ink:#24211e;--muted:#766f67;--red:#d94b2b;--red2:#b9361c;--cream:#f4eadc;--green:#28684b;--line:#eadfD1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input{font:inherit}button{cursor:pointer;border:0}
+header{background:#201d1a;color:white;padding:16px max(20px,calc((100% - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:900;font-size:1.25rem;letter-spacing:-.5px}.logo span{color:#ffb15c}
+header small{color:#d6c9bb}.hero{max-width:1120px;margin:0 auto;padding:54px 20px 34px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.eyebrow{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.75rem}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:.98;letter-spacing:-3px;margin:12px 0 16px}.hero p{color:var(--muted);max-width:500px}
+.hero-art{min-height:240px;border-radius:28px;background:radial-gradient(circle at 50% 45%,#f6c36d 0 22%,transparent 23%),linear-gradient(135deg,#f1d4a8,#e9a15a);display:grid;place-items:center;font-size:7rem;box-shadow:inset 0 -18px 0 #d58a49}
+.promo{display:inline-flex;background:#fff0df;color:#9c421f;border-radius:99px;padding:8px 13px;font-size:.85rem;font-weight:700}
+main{max-width:1120px;margin:auto;padding:8px 20px 60px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:20px 0}
+h2{font-size:1.7rem;letter-spacing:-.8px;margin:0}.section-head p{color:var(--muted);margin:4px 0 0}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:26px;align-items:start}
+.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.item{background:white;border:1px solid var(--line);border-radius:18px;padding:15px;display:flex;gap:13px;min-height:145px}
+.food{width:86px;min-width:86px;height:86px;border-radius:15px;background:var(--cream);display:grid;place-items:center;font-size:2.8rem}
+.item-content{display:flex;flex-direction:column;flex:1}.item h3{font-size:1rem;margin:2px 0 4px}.item p{font-size:.82rem;color:var(--muted);margin:0 0 10px}.item-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.price{font-weight:850}.add{background:var(--red);color:white;border-radius:10px;padding:8px 12px;font-weight:800}.add:hover,.checkout:hover{background:var(--red2)}
+.cart{background:white;border:1px solid var(--line);border-radius:20px;padding:19px;position:sticky;top:15px}
+.cart h2{font-size:1.35rem}.cart-sub{color:var(--muted);font-size:.85rem;margin:3px 0 15px}
+.empty{text-align:center;color:var(--muted);padding:25px 8px}.empty span{font-size:2.4rem;display:block;margin-bottom:7px}
+.cart-line{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid #f0e8de}.cart-line strong{font-size:.9rem}.cart-line small{display:block;color:var(--muted);margin-top:3px}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:25px;height:25px;border-radius:8px;background:var(--cream);font-weight:900}
+.totals{padding:14px 0 4px}.total-row{display:flex;justify-content:space-between;margin:7px 0;color:var(--muted);font-size:.9rem}.total-row.grand{color:var(--ink);font-size:1.12rem;font-weight:900;border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.order-box{border-top:1px solid var(--line);margin-top:13px;padding-top:15px}.order-box h3{margin:0 0 10px;font-size:1rem}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);padding:4px;border-radius:12px;margin-bottom:13px}.tabs button{padding:9px;border-radius:9px;background:transparent;font-weight:750;color:var(--muted)}.tabs button.active{background:white;color:var(--ink);box-shadow:0 1px 5px #00000012}
+.field{margin:10px 0}.field label{display:block;font-size:.8rem;font-weight:750;margin-bottom:5px}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fffdf9;outline-color:var(--red)}.field textarea{resize:vertical;min-height:65px}
+.checkout{width:100%;padding:13px;border-radius:12px;background:var(--red);color:white;font-weight:850;margin-top:8px}.checkout:disabled{opacity:.45;cursor:not-allowed}
+.note{font-size:.75rem;color:var(--muted);text-align:center;margin:9px 0 0}.status{display:none;margin-top:12px;padding:12px;border-radius:12px;background:#e8f4ec;color:var(--green);font-size:.88rem;font-weight:700}
+footer{text-align:center;background:#201d1a;color:#d6c9bb;padding:25px 20px;font-size:.85rem}footer strong{color:white}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.cart{position:static}.hero{grid-template-columns:1fr}.hero-art{min-height:180px}.menu{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.menu{grid-template-columns:1fr}.hero{padding-top:35px}.hero-art{min-height:145px;font-size:5rem}h1{letter-spacing:-2px}.item{min-height:130px}}
+</style>
+</head>
+<body>
+<header><div class="logo">🍔 BRASA<span>BURGER</span></div><small>Feito na brasa. Feito pra você.</small></header>
+<section class="hero">
+ <div><span class="promo">🔥 O sabor que virou tradição</span><h1>Seu próximo<br>hambúrguer favorito.</h1><p>Pão macio, carne suculenta e ingredientes selecionados. Escolha seus favoritos e peça sem complicação.</p></div>
+ <div class="hero-art" aria-label="Ilustração de hambúrguer">🍔</div>
+</section>
+<main>
+ <div class="section-head"><div><h2>Nosso cardápio</h2><p>Escolha, adicione ao carrinho e finalize seu pedido.</p></div></div>
+ <div class="layout">
+  <section class="menu" id="menu"></section>
+  <aside class="cart">
+   <h2>Seu carrinho <span id="cart-count" style="color:var(--red)">(0)</span></h2><p class="cart-sub">Confira seu pedido antes de finalizar.</p>
+   <div id="cart-items"><div class="empty"><span>🛍️</span>Seu carrinho está vazio.<br>Adicione algo gostoso!</div></div>
+   <div class="totals">
+    <div class="total-row"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+    <div class="total-row"><span>Entrega</span><strong id="delivery-cost">R$ 0,00</strong></div>
+    <div class="total-row grand"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+   </div>
+   <div class="order-box">
+    <h3>Como deseja receber?</h3>
+    <div class="tabs"><button id="pickup-tab" class="active" type="button" onclick="setMethod('pickup')">🏃 Retirada</button><button id="delivery-tab" type="button" onclick="setMethod('delivery')">🛵 Delivery</button></div>
+    <div id="delivery-fields" style="display:none">
+     <div class="field"><label for="address">Endereço de entrega</label><input id="address" placeholder="Rua, número, bairro"></div>
+     <div class="field"><label for="reference">Ponto de referência (opcional)</label><input id="reference" placeholder="Ex.: perto da praça"></div>
+    </div>
+    <div id="pickup-info" style="font-size:.82rem;color:var(--muted);margin:0 0 12px">Retire seu pedido no balcão. Avisaremos quando estiver pronto.</div>
+    <div class="field"><label for="customer">Seu nome</label><input id="customer" placeholder="Como podemos te chamar?"></div>
+    <div class="field"><label for="phone">WhatsApp</label><input id="phone" inputmode="tel" placeholder="(00) 00000-0000"></div>
+    <div class="field"><label for="observations">Observações (opcional)</label><textarea id="observations" placeholder="Sem cebola, ponto da carne..."></textarea></div>
+    <button class="checkout" id="checkout" type="button" onclick="finishOrder()" disabled>Finalizar pedido</button>
+    <p class="note">Demonstração: nenhum pagamento ou pedido real será enviado.</p>
+    <div class="status" id="status" role="status"></div>
+   </div>
+  </aside>
+ </div>
+</main>
+<footer><strong>BRASABURGER</strong> · Sabor de verdade, do nosso jeito.<br>Projeto demonstrativo — preços e produtos ilustrativos.</footer>
+<script>
+const products=[
+ {id:1,name:"Brasa Clássico",desc:"Carne 150g, queijo, alface, tomate e molho da casa.",price:24.90,emoji:"🍔"},
+ {id:2,name:"Cheddar & Bacon",desc:"Carne 150g, cheddar cremoso e bacon crocante.",price:29.90,emoji:"🥓"},
+ {id:3,name:"Duplo Brasa",desc:"Dois burgers, queijo duplo e molho especial.",price:34.90,emoji:"🍔"},
+ {id:4,name:"Frango Crocante",desc:"Frango empanado, queijo, alface e maionese.",price:26.90,emoji:"🍗"},
+ {id:5,name:"Batata da Casa",desc:"Porção de batatas douradas e crocantes.",price:14.90,emoji:"🍟"},
+ {id:6,name:"Anéis de Cebola",desc:"Anéis empanados, sequinhos e crocantes.",price:16.90,emoji:"🧅"},
+ {id:7,name:"Refrigerante Lata",desc:"Lata 350 ml — consulte os sabores.",price:6.00,emoji:"🥤"},
+ {id:8,name:"Milk-shake",desc:"Cremoso, 300 ml — chocolate ou morango.",price:15.90,emoji:"🥤"}
+];
+const cart={};let method="pickup";const money=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+document.getElementById("menu").innerHTML=products.map(p=>`<article class="item"><div class="food">${p.emoji}</div><div class="item-content"><h3>${p.name}</h3><p>${p.desc}</p><div class="item-bottom"><span class="price">${money(p.price)}</span><button class="add" onclick="addItem(${p.id})">+ Adicionar</button></div></div></article>`).join("");
+function addItem(id){cart[id]=(cart[id]||0)+1;renderCart()}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+ const entries=Object.entries(cart);const count=entries.reduce((s,[,q])=>s+q,0);const subtotal=entries.reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0);const fee=method==="delivery"&&count?5:0;
+ document.getElementById("cart-count").textContent=`(${count})`;
+ document.getElementById("cart-items").innerHTML=count?entries.map(([id,q])=>{const p=products.find(x=>x.id==id);return `<div class="cart-line"><div><strong>${p.name}</strong><small>${money(p.price)} cada · ${money(p.price*q)}</small></div><div class="qty"><button aria-label="Diminuir ${p.name}" onclick="changeQty(${id},-1)">−</button><b>${q}</b><button aria-label="Aumentar ${p.name}" onclick="changeQty(${id},1)">+</button></div></div>`}).join(""):'<div class="empty"><span>🛍️</span>Seu carrinho está vazio.<br>Adicione algo gostoso!</div>';
+ document.getElementById("subtotal").textContent=money(subtotal);document.getElementById("delivery-cost").textContent=money(fee);document.getElementById("total").textContent=money(subtotal+fee);document.getElementById("checkout").disabled=!count;
+}
+function setMethod(value){method=value;document.getElementById("pickup-tab").classList.toggle("active",value==="pickup");document.getElementById("delivery-tab").classList.toggle("active",value==="delivery");document.getElementById("delivery-fields").style.display=value==="delivery"?"block":"none";document.getElementById("pickup-info").style.display=value==="pickup"?"block":"none";document.getElementById("delivery-cost").parentElement.style.display=Object.keys(cart).length&&value==="delivery"?"flex":"flex";renderCart();document.getElementById("status").style.display="none"}
+function finishOrder(){
+ const name=document.getElementById("customer").value.trim(),phone=document.getElementById("phone").value.trim(),address=document.getElementById("address").value.trim();
+ if(!name||!phone||(method==="delivery"&&!address)){alert("Preencha seu nome, WhatsApp e, para delivery, o endereço.");return}
+ const lines=Object.entries(cart).map(([id,q])=>`${q}x ${products.find(p=>p.id==id).name}`).join(", ");
+ const subtotal=Object.entries(cart).reduce((s,[id,q])=>s+products.find(p=>p.id==id).price*q,0),fee=method==="delivery"?5:0;
+ const status=document.getElementById("status");status.style.display="block";status.innerHTML=`Pedido demonstrativo registrado na tela!<br>${name}, seu pedido: ${lines}.<br>Recebimento: ${method==="pickup"?"Retirada no balcão":"Delivery — "+address}.<br>Total: ${money(subtotal+fee)}.`;
+ status.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+renderCart();
+</script>
+</body>
+</html>
