@@ -1,0 +1,11 @@
+BRASA BURGER — SITE ORIGINAL ATUALIZADO
+
+Arquivos: index.html, style.css e script.js.
+
+O visual original foi preservado. Foram adicionados carrinho com quantidades e total, escolha entre Delivery e Retirada e formulário de endereço exibido somente para Delivery.
+
+Para ativar o envio real dos pedidos: abra script.js e preencha WHATSAPP_NUMBER com DDI + DDD + número, somente dígitos. Exemplo: 5582991234567. Sem esse número, o checkout mostra um aviso de configuração.
+
+Para publicar: envie os quatro arquivos para o mesmo repositório conectado à Vercel e faça um novo deploy. As imagens atuais do site carregam pela internet.
+
+Produtos e preços permanecem demonstrativos; revise antes de usar comercialmente.

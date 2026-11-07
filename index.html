@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211714">
+  <meta name="description" content="Brasa Burger — hambúrguer artesanal, ingredientes selecionados e sabor de verdade.">
+  <title>Brasa Burger | Feito na brasa, feito pra você</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">🔥 HOJE É DIA DE BURGER — PEÇA O SEU!</div>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Brasa Burger início">
+      <span class="brand-mark">B<span>✦</span></span>
+      <span class="brand-name">BRASA<span>BURGER</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+    <nav class="nav">
+      <a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#historia">Nossa essência</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="header-cta" href="#cardapio">ESCOLHA SEU BURGER <span>↗</span></a>
+    <button class="cart-trigger" type="button" aria-label="Abrir carrinho">🛒 <span class="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-photo"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow"><span></span> BURGER ARTESANAL • DESDE SEMPRE</p>
+        <h1>FRESCO, QUENTE<br>E <em>FEITO PRA AMAR.</em></h1>
+        <p class="hero-copy">Pão macio, carne suculenta e ingredientes de verdade. A combinação perfeita para transformar sua fome em felicidade.</p>
+        <div class="hero-actions"><a class="button button-red" href="#cardapio">VER CARDÁPIO <span>↗</span></a><a class="text-link" href="#historia">Conheça nossa história <span>↓</span></a></div>
+      </div>
+      <div class="hero-stamp"><span>100%</span><small>SABOR<br>ARTESANAL</small></div>
+      <div class="hero-bottom"><span>01 / 03</span><span>O SABOR QUE FICA NA MEMÓRIA</span><span>↓ ROLE PARA DESCOBRIR</span></div>
+    </section>
+
+    <section class="feature-strip">
+      <div class="feature-image" role="img" aria-label="Hambúrguer artesanal sendo preparado"></div>
+      <div class="feature-note"><span class="mini-label">NOSSO SEGREDO</span><h2>O SIMPLES<br>FEITO <em>EXTRAORDINÁRIO.</em></h2><p>Ingredientes selecionados, preparo cuidadoso e aquele toque especial que faz cada mordida valer a pena.</p><a href="#historia" class="arrow-link">DESCUBRA MAIS <span>↗</span></a></div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="section-heading reveal"><div><p class="eyebrow dark"><span></span> DIRETO DA NOSSA CHAPA</p><h2>OS FAVORITOS<br>DA <em>CASA.</em></h2></div><p>Receitas autorais, ingredientes frescos<br>e muito sabor em cada detalhe.</p></div>
+      <div class="menu-grid">
+        <article class="menu-card reveal"><div class="menu-img img-one"><span class="tag">MAIS PEDIDO</span></div><div class="menu-info"><div><h3>Brasa Clássico</h3><p>Pão brioche, burger 160g, queijo cheddar, alface e molho da casa.</p></div><strong>R$ 29,90</strong></div><button class="order-button" data-item="Brasa Clássico">QUERO ESSE <span>↗</span></button></article>
+        <article class="menu-card reveal"><div class="menu-img img-two" role="img" aria-label="Double Cheddar com dois hambúrgueres e cheddar cremoso"><span class="tag tag-yellow">INTENSO</span></div><div class="menu-info"><div><h3>Double Cheddar</h3><p>Dois burgers, cheddar cremoso, cebola caramelizada e brioche.</p></div><strong>R$ 36,90</strong></div><button class="order-button" data-item="Double Cheddar">QUERO ESSE <span>↗</span></button></article>
+        <article class="menu-card reveal"><div class="menu-img img-three"><span class="tag">DA CASA</span></div><div class="menu-info"><div><h3>BBQ Supreme</h3><p> burger artesanal, bacon crocante, queijo e barbecue defumado.</p></div><strong>R$ 34,90</strong></div><button class="order-button" data-item="BBQ Supreme">QUERO ESSE <span>↗</span></button></article>
+      </div>
+      <p class="menu-disclaimer">* Cardápio e valores ilustrativos para demonstração. Personalize com os dados do estabelecimento.</p>
+    </section>
+
+    <section class="story" id="historia">
+      <div class="story-image reveal"><div class="image-caption">FEITO NA HORA. FEITO COM PAIXÃO.</div></div>
+      <div class="story-content reveal"><p class="eyebrow dark"><span></span> MAIS QUE UM HAMBÚRGUER</p><h2>ACENDEMOS A<br>BRASA. VOCÊ<br><em>SENTE O SABOR.</em></h2><p>Acreditamos que uma boa experiência começa muito antes da primeira mordida. Por isso, cuidamos de cada detalhe: da escolha dos ingredientes ao momento em que o pedido chega até você.</p><div class="values"><div><b>01</b><span><strong>Ingredientes frescos</strong><small>Qualidade que você percebe.</small></span></div><div><b>02</b><span><strong>Feito na hora</strong><small>Mais sabor em cada pedido.</small></span></div></div><a href="#contato" class="button button-dark">VEM PRA BRASA <span>↗</span></a></div>
+    </section>
+
+    <section class="closing" id="contato">
+      <div class="closing-photo"></div><div class="closing-overlay"></div>
+      <div class="closing-content reveal"><p class="eyebrow"><span></span> SUA PRÓXIMA MORDIDA FAVORITA</p><h2>BATEU A FOME?<br><em>CHAMA A BRASA.</em></h2><p>Escolha seu favorito e faça seu pedido. A gente cuida do resto.</p><a class="button button-red" href="#cardapio">FAZER MEU PEDIDO <span>↗</span></a></div>
+      <div class="closing-burger"></div>
+    </section>
+  </main>
+  <footer class="footer"><a class="brand footer-brand" href="#inicio"><span class="brand-mark">B<span>✦</span></span><span class="brand-name">BRASA<span>BURGER</span></span></a><p>Feito na brasa. Feito pra você.</p><div class="footer-links"><a href="#cardapio">Cardápio</a><a href="#historia">Nossa essência</a><a href="#contato">Contato</a></div><small>© 2026 Brasa Burger — Site demonstrativo.</small></footer>
+  <div class="cart-backdrop" hidden></div>
+  <aside class="cart-panel" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="cart-head"><h2>🛒 Seu carrinho</h2><button class="cart-close" type="button" aria-label="Fechar carrinho">×</button></div>
+    <div class="cart-items"><p class="cart-empty">Seu carrinho está vazio. Escolha seu burger favorito!</p></div>
+    <div class="cart-summary"><span>Total</span><strong class="cart-total">R$ 0,00</strong></div>
+    <form class="checkout-form">
+      <fieldset class="fulfillment"><legend>Como deseja receber?</legend>
+        <label><input type="radio" name="fulfillment" value="delivery" checked> Delivery</label>
+        <label><input type="radio" name="fulfillment" value="pickup"> Retirada</label>
+      </fieldset>
+      <div class="delivery-fields">
+        <p>Informe os dados para entrega:</p>
+        <label>Nome completo<input name="customer" autocomplete="name" placeholder="Seu nome" required></label>
+        <label>Endereço completo<input name="address" autocomplete="street-address" placeholder="Rua, bairro e cidade" required></label>
+        <label>N°<input name="number" placeholder="Número" required></label>
+        <label>Ponto de referência<input name="reference" placeholder="Ex.: próximo à praça" required></label>
+      </div>
+      <button class="checkout-button" type="submit">FINALIZAR PEDIDO NO WHATSAPP ↗</button>
+      <small class="checkout-note">🔒 Seu pedido será enviado pelo WhatsApp.</small>
+    </form>
+  </aside>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
